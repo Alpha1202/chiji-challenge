@@ -1,0 +1,1 @@
+export { default as CommentRoutes } from './comment.routes';

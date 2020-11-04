@@ -3,15 +3,17 @@ import express from 'express'
 
 import middlewareConfig from './db/middlewares'
 import config from './db/config/config'
+import { UserRoutes, PostRoutes, CommentRoutes } from './modules'
 
 const { port } = config
 
 const app = express()
 middlewareConfig(app)
 
-const routes = []
 
-routes.map((route) => app.use('/api/v1', route))
+app.use('/api/v1/users', UserRoutes);
+app.use('/api/v1/posts', PostRoutes);
+app.use('/api/v1/comments', CommentRoutes);
 
 app.all('*', (req, res) =>
   res.status(404).send({

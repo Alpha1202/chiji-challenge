@@ -19,6 +19,12 @@ module.exports = {
     dialect: 'postgres',
     logging: false,
   },
+  cloudinaryConfig: {
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_SECRET,
+  },
   isDev: process.env.NODE_ENV === 'development',
-  port: process.env.PORT
+  port: process.env.PORT,
+  secret: process.env.JWT_SECRET
 };
